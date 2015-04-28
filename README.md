@@ -2,6 +2,8 @@
 
 Installation
 ------------
+**Note:** The installation process takes time to complete since the LaTeX packages are quite large..
+
 ### Ubuntu Users
 ```
 git clone https://github.com/aitcsim/ait-thesis-latex-template.git
