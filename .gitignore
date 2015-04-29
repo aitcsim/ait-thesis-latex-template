@@ -127,3 +127,6 @@ sympy-plots-for-*.tex/
 
 # vagrant
 .vagrant
+
+# Mac
+.DS_Store
