@@ -1,0 +1,82 @@
+% EE Thesis/Dissertation
+% Please see http://ee.tamu.edu/~tex for information about EE Thesis.
+
+\documentclass[a4paper]{aitthesis}
+
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amssymb,amsthm,amsmath}
+\usepackage[notocbib]{apacite}
+\usepackage{verbatim}
+\usepackage{multirow}
+\usepackage{bm}
+\usepackage{url}
+\usepackage{algorithm}
+\usepackage{algcompatible}
+\usepackage{placeins}
+\usepackage{times}
+\usepackage{array}
+\usepackage[caption=false,font=footnotesize]{subfig}
+
+\newcommand{\oops}[1]{\bf{#1}}
+\newcommand{\ga}{\bar{\gamma}}
+\newcommand{\myint}{\int_0^{\infty}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\mat}[1]{\mathrm{#1}}
+
+\newcommand{\vectornorm}[1]{\left|\left|#1\right|\right|}
+
+\newcommand{\ten}[1]{\mathcal{#1}}
+\newcommand{\crossmat}[1]{\begin{bmatrix} #1 \end{bmatrix}_{\times}}
+\newcommand{\class}[1]{{\cal C}_{#1}}
+\def\Rset{\mathbb{R}}
+\def\Pset{\mathbb{P}}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\sign}{sign}
+\def\norm{\mbox{$\cal{N}$}}
+
+\newcommand\parms{\vec{\lambda}}
+\newcommand\oldparms{\parms^{\text{old}}}
+
+\def\short{1}
+
+\begin{document}
+
+\pagenumbering{roman}
+\pagestyle{plain}
+\include{frontstuff}
+\small
+
+\pagenumbering{arabic}
+\setlength{\headheight}{12pt}
+\pagestyle{plain}
+
+\include{intro}
+\include{literature}
+\include{methodology}
+\include{results}
+\include{conclusion}
+
+% NEED TO CHANGE THE SECTION NUMBER FOR REFERENCES ACCORDINGLY.
+\addcontentsline{toc}{chapter}{6 \hskip 3.55em References}
+
+\bibliographystyle{apacite}
+\bibliography{references}
+
+% COMMENT THE LINES ABOUT APPENDICS OUT IF YOU DO NOT HAVE THIS SECTION.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                 %
+%                            APPENDICES                           %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage\pagestyle{plain}
+\theappendix
+
+% NEED TO CHANGE THE SECTION NUMBER FOR REFERENCES ACCORDINGLY.
+\addcontentsline{toc}{chapter}{7 \hskip 3.55em Appendices}
+
+\include{appendix1}
+
+\end{document}

@@ -1,0 +1,56 @@
+\setlength{\footskip}{8mm}
+
+\chapter{Methodology}
+\label{ch:methodology}
+
+\textit{Some intro..}
+
+\section{System Overview}
+
+Some text .. Algorithm \ref{lame-algorithm} is just a pseudocode.
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmicforall}{\textbf{for each}}
+\begin{algorithm}
+\caption{Lame Algorithm}
+\label{lame-algorithm}
+\begin{algorithmic}
+  \REQUIRE $B$: set of all current blobs
+  \REQUIRE $T$: set of all current tracks
+  \REQUIRE $M$: merged track association matrix
+  \ENSURE $\widetilde{T}$: set of all revised tracks
+  \ENSURE $\widetilde{M}$: revised merged track association matrix
+  \STATE $\widetilde{T} \gets \emptyset$; $\widetilde{M} \gets \emptyset$; $L \gets \emptyset$
+%  \STATE \COMMENT{Construct an overlap area matrix between the bounding box of blobs and tracks.}
+  \STATE $A \gets \textsc{Get-Overlap-Area-Matrix}(B, T)$
+  \FORALL{$t \in T$}
+    \STATE \textbf{if} $t$ is marked as processed \textbf{then} continue
+    \STATE $B' \gets \{ b' \mid A(b', t) > 0 \}$ \COMMENT{$B'$ contains candidate blobs for track $t$.}
+    \STATE $T' \gets \{ t \} \cup \{ t' \mid M(t, t') = 1 \}$ \COMMENT{$T'$ contains all tracks currently merged with $t$.}
+    \IF{$|B'| \geq 1$}
+      \FORALL{$t' \in T'$}
+        \STATE Let $b = \displaystyle\argmax_{b' \in B'} S(b', t')$
+        \STATE $L \gets L \cup \{ (t', b) \}$
+        \STATE $\textsc{Mark-Track-As-Processed}(t')$
+      \ENDFOR
+    \ENDIF
+  \ENDFOR
+  \FORALL{$(t_i, t_j) \in T \times T$}
+    %\STATE \COMMENT{If track $t_i$ links to the same blob $b$ as track $t_j$}
+    \STATE If $\exists b$ s.t.\ $(t_i, b) \in L \wedge (t_j, b) \in L, \widetilde{M}_{ij} \gets 1$, otherwise $\widetilde{M}_{ij} \gets 0$
+  \ENDFOR
+  \STATE $T^* \gets \{ t^* \mid \neg\exists b \in B \;\text{s.t.}\; (t^*,b) \in L \}$ \COMMENT{$T^*$ contains tracks for which ``stale count'' will be increased.}
+  \STATE $\widetilde{T} \gets \textsc{Update-Or-Delete-Stale-Tracks}(T,T^*)$
+  \STATE $B^* \gets \{ b^* \mid \neg \exists t \in T \;\text{s.t.}\; (t, b^*) \in L \}$ \COMMENT{$B^*$ contains blobs with no tracks assigned.}
+  \STATE $\widetilde{T} \gets\textsc{Add-New-Tracks-For-Not-Linked-Blobs}(\widetilde{T},B^*)$
+\end{algorithmic}
+\end{algorithm}
+
+\section{System Design}
+
+\subsection{Design A}
+
+Some text ..
+
+\FloatBarrier

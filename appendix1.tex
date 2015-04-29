@@ -1,0 +1,33 @@
+\setlength{\footskip}{8mm}
+
+% NOTE: NEED TO DO EVERYTHING SUCH AS SECTION NUMBER OR FIGURE NUMBER 
+% MANUALLY IN THIS CHAPTER.
+
+\renewcommand{\thefigure}{A.\arabic{figure}}
+
+\begin{center}
+{\large \bf Appendix A\\ \vskip 1em .. TITLE HERE ..\\ \vskip 1em}
+\vskip 1em
+\end{center}
+
+\FloatBarrier
+
+\singlespace
+ 
+{\bf Section Name} \\ 
+
+Figure~\ref{fig:monitoring-test} shows something. 
+
+Some text ..
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=5in]{figures/monitoring}
+  \caption[CCTV monitoring room in Appendix A.]{\small CCTV monitoring
+    room. Reprinted from the Twenty First Security Web site
+    (\url{http://www.twentyfirstsecurity.com.au/}).}
+  \label{fig:monitoring-test}
+\end{figure}
+
+\FloatBarrier
+

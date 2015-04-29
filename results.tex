@@ -1,0 +1,28 @@
+\setlength{\footskip}{8mm}
+
+\chapter{Experimental Results}
+\label{ch:results}
+
+\textit{Some intro..}
+
+\section{Section Name in Experimental Results}
+\label{section-name-in-experimental-results}
+
+Table~\ref{tab:hmm-based-detection-results} shows a table.
+
+\begin{table}[t]
+  \caption[Text shown in the LOT.]{\small Some table.}
+  \begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c}
+      \hline Batch method & TP & FP & TN & FN & TPR & FPR \\ \hline \hline
+      Local ($z$-scoring) & 24 & 42 & 444 & 0 & 1 & 0.086 \\ \hline
+      Local (LRT) & 24 & 486 & 0 & 0 & 1 & 1 \\ \hline 
+      Global ($z$-scoring) & 24 & 217 & 10 & 0 & 1 & 0.956 \\ \hline 
+      Global (LRT) & 24 & 223 & 4 & 0 & 1 & 0.982 \\ \hline
+    \end{tabular}
+  \end{center}
+  \label{tab:hmm-based-detection-results}
+\end{table} 
+
+\FloatBarrier
+

@@ -1,0 +1,139 @@
+%==========================================================
+%======================  FRONT STUFF ======================
+%==========================================================
+
+%======================= Cover Page =======================
+%\begin{document}
+\newpage
+\pagestyle{plain}
+\pagenumbering{roman}
+\setcounter{page}{1}
+\addcontentsline{toc}{section}{Title Page}
+%\setlength{\footskip}{-15mm}
+\setlength{\textheight}{230mm}
+\setlength{\voffset}{10mm}
+\vskip -5em
+
+\begin{center}
+{ 
+  \singlespace \uppercase{\bf YOUR TITLE} \par
+}
+\vskip 2em
+{
+  \lineskip 1.5em
+  \begin{tabular}[t]{c} by\\ \\ YOUR NAME
+  \end{tabular}\par
+}
+%\vskip 5.6em
+
+\vskip 3.5em
+\singlespace A [thesis $\mid$ dissertation] submitted in partial fulfillment of the
+requirements for the\\ degree of [Master of XXXX $\mid$ Doctor of Philosophy] in\\ 
+Computer Science 
+
+%	\vskip 5em
+\vskip 0.5em
+{
+  \singlespace
+  \begin{center}
+    \begin{tabular}{rl}
+      \\[-1em]
+      Examination Committee: & Dr.\ YOUR ADVIOR (Chairperson) \\[-0.8em]
+                             & Dr.\ YOUR COMMITTEE \#1 \\[-0.8em]
+                             & Dr.\ YOUR COMMITTEE \#2 \\\\
+
+% UNCOMMENT THE LINES BELOW IF YOU HAVE THE EXTERNAL EXAMINER.
+%      External Examiner:     & Prof.\ YOUR EXTERNAL EXAMINER \\[-0.8em]
+%                             & Dept.\ of Electrical and Computer Engineering \\[-0.8em]
+%                             & McGill University, Canada \\\\
+		
+      Nationality:     & Thai \\[-0.8em]
+      Previous Degree: & Master of Engineering in Computer Science\\[-0.8em]
+                       & Asian Institute of Technology, Thailand\\[-0.8em]
+      \\
+      Scholarship Donor: & Royal Thai Government\\[-0.8em]
+      \\
+    \end{tabular}
+  \end{center}
+
+  \vskip 3.0em
+  \centerline{}
+  \vskip 2em
+}
+\end{center}
+\begin{center}
+  \singlespace Asian Institute of Technology\\ School of Engineering
+                  and Technology\\ Thailand\\ May XXXX
+\end{center}
+\vfill
+
+%====================== ACKNOWLEDGEMENTS ======================
+\newpage
+\pagestyle{plain}
+\addcontentsline{toc}{section}{Acknowledgments}
+\onecolumn % Single-column.
+\if@twoside\else\raggedbottom\fi % Ragged bottom unless twoside option.
+\setlength{\footskip}{8mm}
+\begin{center}
+{
+  \large \bf Acknowledgments\\ \vskip 1em
+}
+\vskip 1em
+\end{center}
+\singlespace
+\doublespace
+\hspace{8.5mm}
+\vspace{-1em}
+
+Write your touching message here..
+
+%====================== ABSTRACT ======================
+\newpage
+\pagestyle{plain}
+\addcontentsline{toc}{section}{Abstract}
+\onecolumn % Single-column.
+\if@twoside\else\raggedbottom\fi % Ragged bottom unless twoside option.
+
+\setlength{\footskip}{8mm}
+
+\begin{center}
+{\large \bf Abstract \\ \vskip 1em}
+\vskip 1em
+\end{center}
+\singlespace
+\doublespace
+\hspace{8.5mm}
+\vspace{-1em}
+
+Abstract here..
+
+\setlength{\parskip}{0pt} 
+%======================= Table of Contents =========================
+\newpage
+\addcontentsline{toc}{section}{Table of Contents}
+\tableofcontents
+
+% Page 2 begins
+
+%===================== List of Figures ======================
+\newpage
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+
+%\clearpage     % \clearpage ends the page, and also dumps out all floats.
+%\end{document} % Floats are things like tables and figures.
+
+%\clearpage     % \clearpage ends the page, and also dumps out all floats.
+
+% %===================== List of Tables ======================
+\newpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+
+% %\clearpage     % \clearpage ends the page, and also dumps out all floats.
+% %\end{document} % Floats are things like tables and figures.
+
+%\clearpage     % \clearpage ends the page, and also dumps out all floats.
+
+\setlength{\parskip}{12pt}
+

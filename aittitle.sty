@@ -1,0 +1,75 @@
+% DECLARATIONS
+%
+% These macros are used to declare arguments needed for the
+% construction of the front matter.  
+
+\def\thesis{\gdef\@thesistype{A thesis}}
+\def\essay{\gdef\@thesistype{An essay}}
+\def\dissertation{\gdef\@thesistype{A dissertation}}
+\def\mastereng{\gdef\@degreetype{Master of Engineering}} % Added to include ME %
+\def\masterscience{\gdef\@degreetype{Master of Science}}
+\def\doctorphilosophy{\gdef\@degreetype{Doctor of Philosophy}}
+
+% The year the degree will be officially conferred
+\def\degreeyear#1{\gdef\@degreeyear{#1}}
+\def\degreemonth#1{\gdef\@degreemonth{#1}}
+
+%%%ADN The following definitions are added as required in AIT thesis title page 
+\def\department#1{\gdef\@department{#1}}		% e.g., Information and Communication Technology 
+\def\adviser#1{\gdef\@adviser{#1}} 				% e.g., Dr. Matthew N. Dailey (Chairperson)
+\def\memberone#1{\gdef\@memberone{#1}}			% e.g., Dr. Manukid
+\def\membertwo#1{\gdef\@membertwo{#1}}			% e.g., Dr. Thavida
+\def\memberthree#1{\gdef\@memberthree{#1}}
+\def\memberfour#1{\gdef\@memberfour{#1}}
+\def\memberfive#1{\gdef\@memberfive{#1}}
+\def\membersix#1{\gdef\@membersix{#1}}
+\def\nationality#1{\gdef\@nationality{#1}} 	% e.g., Nepalese
+\def\prevdegree#1{\gdef\@prevdegree{#1}} 		% e.g., Bachelors of Engineering
+\def\field#1{\gdef\@field{#1}}					% e.g., (Computer)
+\def\university#1{\gdef\@university{#1}}	   % e.g., Tribhuvan University
+\def\country#1{\gdef\@country{#1}}				% Thailand ( This is always Thailand )
+\def\institute#1{\gdef\@institute{#1}}			% Asian Institute of Technology
+\def\school#1{\gdef\@school{#1}}					% e.g., School of Engineering and Technology
+\def\donor#1{\gdef\@donor{#1}} 					% e.g., Government of Finland
+
+% TITLE PAGE
+
+%\addcontentsline{toc}{section}{Title Page}
+
+\def\maketitle{
+{\singlespace    
+%%%ADN This part has been changed as suggested in AIT STYLES GUIDELINES, please verify if it 
+%%%complies with the guidelines and feel free to contact me where changes are needed.
+
+%
+   %\vbox to \textheight{
+     % \null
+     %\vfil \vskip 2.5cm 
+      \begin{center}
+         {\uppercase{\bf \@title} \par}
+         \vskip 42pt
+         {by \par}
+         \vskip 42pt
+         {\@author \par}
+         \vskip 56pt 
+         \@thesistype\ submitted in partial fulfillment of the requirements for the \\
+	 degree of \@degreetype \/ in \\
+         \@department 
+         \vskip 56pt
+         \begin{tabular}{rl}
+          Examination Committee:  & \@adviser \/ (Chairperson)\\[-0.8em]
+	                          & \@memberone \/ (Member)\\[-0.8em]
+			          & \@membertwo \/ (External Member)\\[56pt]
+          Nationality:  	  & \@nationality\\[-0.8em]
+          Previous Degree:        & \@prevdegree \\[-0.8em]
+			          %& \@field \\ [-0.8em]
+			          & \@university, \@country\\[14pt]
+          Scholarship Donor:	  & \@donor   
+         \end{tabular}
+         \vskip 70pt 
+         {\@institute\par}
+    	 {\@school\par}
+         {Thailand\par}
+         {\@degreemonth \/ \@degreeyear\par}
+      \end{center} \par 
+}}
