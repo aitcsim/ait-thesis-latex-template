@@ -19,6 +19,13 @@ cd ait-thesis-latex-template
 vagrant up
 ```
 
+Or <a href="https://docs.docker.com/v17.12/docker-for-mac/install/" target="_blank">Docker</a>.
+```
+git clone https://github.com/aitcsim/ait-thesis-latex-template.git
+cd ait-thesis-latex-template
+./run-docker.sh
+```
+
 Getting Started
 ------------
 ### Ubuntu Users
